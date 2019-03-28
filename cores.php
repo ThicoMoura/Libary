@@ -61,6 +61,7 @@ function __autoload($classe){
         </div>
         <div class="input-field col s6">
           <select id="texto" name="texto">
+            <option disabled selected>Escolha uma cor</option>
             <option value="grey darken-4">Cinza Escuro</option>
             <option value="blue">Azul</option>
             <option value="red">Vermelho</option>

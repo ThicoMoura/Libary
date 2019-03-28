@@ -224,7 +224,7 @@ require_once 'funcao.php';
                         <td><span class="">'.utf8_encode($value['numero']).''.utf8_encode($value['n']).'</span></td>
                         <td><span class="">'.utf8_encode($value['previsao']).'</span></td>
                         <td><span class="">'.utf8_encode($value['status']).'</span></td>
-                        <td><a class="btn " href="reservar.php?id='.$value['acervoid'].'">Reservar</a></td>
+                        <td><a class="btn " href="pedido_livro.php?id='.$value['acervoid'].'">Reservar</a></td>
                     </tr>
 					';
 			}

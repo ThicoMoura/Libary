@@ -15,6 +15,7 @@ if (isLoggedIn()) {
 
 //Id livro
 $id = $_GET['id'];
+$userid = $_GET['userid'];
 
 //defino minhas classes de verificação e update
 $livro = new veri();
@@ -27,7 +28,7 @@ foreach ($livro->readACER($id) as $key => $li) {
 if (in_array("disponivel", $li)) {
 
 	$user = new usuario_adm();
-	$id = $_SESSION['user_id'];
+	$id = $_GET['userid'];
 
 foreach ($user->readSI($id) as $key => $quan) {
 
@@ -84,21 +85,21 @@ if ($quan['quant'] <= $quan['limite']) {
 
 
 
-    header("Location: index.php?mensagem=Reserva realizada com sucesso");  
+    header("Location: painel.php?mensagem=Reserva realizada com sucesso");  
 
 }else{
-  header("Location: index.php?mensagem=Limite de reservas atingido");
+  header("Location: painel.php?mensagem=Limite de reservas atingido");
 
 }
 
 }
 
 } else {
-	header("Location: index.php?mensagem=O livro já esta reservado");
+	header("Location: painel.php?mensagem=O livro já esta reservado");
 }
 
 }
     } else{
-        header("Location: index.php?mensagem=Usuario não logado");
+        header("Location: painel.php?mensagem=Usuario não logado");
     } ?>
   

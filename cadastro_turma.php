@@ -33,6 +33,9 @@ $url = $_SERVER['REQUEST_URI'];
   <div class="row"></div>
   <div class="row"></div>
   <div class="row"></div>
+  <div class="row"></div>
+  <div class="row"></div>
+  <div class="row"></div>
 
   <div class="row">
 
@@ -58,6 +61,10 @@ $url = $_SERVER['REQUEST_URI'];
   <div class="row"></div>
   <div class="row"></div>
   <div class="row"></div>
+  <div class="row"></div>
+  <div class="row"></div>
+  <div class="row"></div>
+
 
 
 <footer class="page-footer <?php echo $_SESSION['user_menu'] ?>">

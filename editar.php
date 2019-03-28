@@ -61,14 +61,14 @@ $stmt ->execute();
         <div class="col s6">
           Titulo:
           <div class="input-field">
-          <input id="titulo" type="text" name="titulo">
+          <input id="titulo" type="text" name="titulo" class="validate" required>
           <label for="titulo">'; foreach($livro -> readLid($id) as $value){ echo utf8_encode($value['titulo']);} echo'</label>
         </div>
         </div>
         <div class="col s6">
           Autor:
         <div class="input-field">
-          <input id="autor" type="text" name="autor">
+          <input id="autor" type="text" name="autor" class="validate" required>
           <label for="autor">'; foreach($livro -> readLid($id) as $value){ echo utf8_encode($value['autor']);} echo'</label>
         </div>
       </div>
@@ -77,14 +77,14 @@ $stmt ->execute();
         <div class="col s6">
           Editora:
         <div class="input-field">
-          <input id="editora" type="text" name="editora">
+          <input id="editora" type="text" name="editora" class="validate" required>
           <label for="editora">'; foreach($livro -> readLid($id) as $value){ echo utf8_encode($value['editora']);} echo'</label>
         </div>
       </div>
         <div class="col s6">
           Genêro:
         <div class="input-field">
-          <input id="genero" type="text" name="genero">
+          <input id="genero" type="text" name="genero" class="validate" required>
           <label for="genero">'; foreach($livro -> readLid($id) as $value){ echo utf8_encode($value['genero']);} echo'</label>
         </div>
         </div>
@@ -93,14 +93,14 @@ $stmt ->execute();
         <div class="col s6">
           Fileira:
         <div class="input-field">
-          <input id="fileira" type="text" name="fileira">
+          <input id="fileira" type="text" name="fileira" class="validate" required>
           <label for="fileira">'; foreach($livro -> readLid($id) as $value){ echo utf8_encode($value['fileira']);} echo'</label>
         </div>
         </div>
         <div class="col s6">
           Numero:
         <div class="input-field">
-          <input id="numero" type="text" name="numero">
+          <input id="numero" type="text" name="numero" class="validate" required>
           <label for="numero">'; foreach($livro -> readLid($id) as $value){ echo utf8_encode($value['numero']);} echo'</label>
         </div>
         </div>
@@ -109,7 +109,7 @@ $stmt ->execute();
         <div class="col s6">
           Sinopse:
         <div class="input-field">
-          <input id="sinopse" type="text" name="sinopse">
+          <input id="sinopse" type="text" name="sinopse" class="validate" required>
           <label for="sinopse">'; foreach($livro -> readLid($id) as $value){ echo utf8_encode($value['sinopse']);} echo'</label>
         </div>
         </div>
@@ -129,14 +129,14 @@ $stmt ->execute();
         <div class="col s6">
           Titulo:
           <div class="input-field">
-          <input id="titulo" type="text" name="titulo">
+          <input id="titulo" type="text" name="titulo" class="validate" required>
           <label for="titulo">'; foreach($projeto -> readPRO($id) as $value){ echo utf8_encode($value['titulo']);} echo'</label>
         </div>
         </div>
         <div class="col s6">
           Autor:
         <div class="input-field">
-          <input id="autor" type="text" name="autor">
+          <input id="autor" type="text" name="autor" class="validate" required>
           <label for="autor">'; foreach($projeto -> readPRO($id) as $value){ echo utf8_encode($value['autor']);} echo'</label>
         </div>
       </div>
@@ -145,14 +145,14 @@ $stmt ->execute();
         <div class="col s6">
           Descricao:
         <div class="input-field">
-          <input id="descricao" type="text" name="descricao">
+          <input id="descricao" type="text" name="descricao" class="validate" required>
           <label for="descricao">'; foreach($projeto -> readPRO($id) as $value){ echo utf8_encode($value['descricao']);} echo'</label>
         </div>
       </div>
         <div class="col s6">
           Horario:
         <div class="input-field">
-          <input id="horario" type="text" name="horario">
+          <input id="horario" type="text" name="horario" class="validate" required>
           <label for="horario">'; foreach($projeto -> readPRO($id) as $value){ echo utf8_encode($value['horario']);} echo'</label>
         </div>
         </div>
@@ -173,14 +173,14 @@ $stmt ->execute();
         <div class="col s6">
           Nome:
           <div class="input-field">
-          <input id="nome" type="text" name="nome">
+          <input id="nome" type="text" name="nome" class="validate" required>
           <label for="nome">'; foreach($usuario_adm -> readSI($id) as $value){ echo utf8_encode($value['nome']);} echo'</label>
         </div>
         </div>
         <div class="col s6">
           Login:
         <div class="input-field">
-          <input id="login" type="text" name="login">
+          <input id="login" type="text" name="login" class="validate" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
           <label for="login">'; foreach($usuario_adm -> readSI($id) as $value){ echo utf8_encode($value['login']);} echo'</label>
         </div>
       </div>
@@ -189,14 +189,14 @@ $stmt ->execute();
         <div class="col s6">
           Senha:
         <div class="input-field">
-          <input id="senha" type="password" name="senha" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+          <input id="senha" type="password" name="senha" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="validate" required>
           <label for="senha">Senha</label>
         </div>
       </div>
         <div class="col s6">
           Confimar senha:
         <div class="input-field">
-          <input id="conf_senha" type="password" name="senha_con" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+          <input id="conf_senha" type="password" name="senha_con" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="validate" required>
           <label for="conf_senha">Confirmar senha</label>
         </div>
         </div>
@@ -217,14 +217,14 @@ $stmt ->execute();
         <div class="col s6">
           Nome:
           <div class="input-field">
-          <input id="nome" type="text" name="nome">
+          <input id="nome" type="text" name="nome" class="validate" required>
           <label for="nome">'; foreach($usuario_al -> readSI($id) as $value){ echo utf8_encode($value['nome']);} echo'</label>
         </div>
         </div>
         <div class="col s6">
           Login:
         <div class="input-field">
-          <input id="login" type="text" name="login">
+          <input id="login" type="text" name="login" class="validate" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
           <label for="login">'; foreach($usuario_al -> readSI($id) as $value){ echo utf8_encode($value['login']);} echo'</label>
         </div>
       </div>
@@ -233,14 +233,14 @@ $stmt ->execute();
         <div class="col s6">
           Senha:
         <div class="input-field">
-          <input id="senha" type="password" name="senha" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+          <input id="senha" type="password" name="senha" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="validate" required>
           <label for="senha"></label>
         </div>
       </div>
         <div class="col s6">
           Confirmar senha:
         <div class="input-field">
-          <input id="conf_senha" type="password" name="senha_con" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+          <input id="conf_senha" type="password" name="senha_con" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="validate" required>
           <label for="conf_senha"></label>
         </div>
         </div>
@@ -249,14 +249,14 @@ $stmt ->execute();
         <div class="col s6">
           Email:
         <div class="input-field">
-          <input id="email" type="text" name="email">
+          <input id="email" type="text" name="email" class="validate" required>
           <label for="email">'; foreach($usuario_al -> readSI($id) as $value){ echo utf8_encode($value['email']);} echo'</label>
         </div>
         </div>
         <div class="col s6">
           Matricula:
         <div class="input-field">
-          <input id="matricula" type="number" name="matricula">
+          <input id="matricula" type="number" name="matricula" class="validate" required>
           <label for="matricula">'; foreach($usuario_al -> readSI($id) as $value){ echo utf8_encode($value['matricula']);} echo'</label>
         </div> 
       </div>
@@ -264,14 +264,14 @@ $stmt ->execute();
         <div class="col s6">
           Turma:
         <div class="input-field">
-          <input id="turma" type="number" name="turmaid">
+          <input id="turma" type="number" name="turmaid" class="validate" required>
           <label for="turma">'; foreach ($stmt->fetchALL(PDO::FETCH_ASSOC) as $value){ echo utf8_encode($value['nometur']); } echo'</label>
         </div>
         </div>
         <div class="col s6">
           Limite:
         <div class="input-field">
-          <input id="limite" type="number" name="limite">
+          <input id="limite" type="number" name="limite" class="validate" required>
           <label for="limite">'; foreach($usuario_al -> readSI($id) as $value){ echo utf8_encode($value['limite']);} echo'</label>
         </div>
       </div>
@@ -292,14 +292,14 @@ $stmt ->execute();
         <div class="col s6">
           Nome:
           <div class="input-field">
-          <input id="nome" type="text" name="nome">
+          <input id="nome" type="text" name="nome" class="validate" required>
           <label for="nome">'; foreach($usuario_bi -> readSI($id) as $value){ echo utf8_encode($value['nome']);} echo'</label>
         </div>
         </div>
         <div class="col s6">
           Login:
         <div class="input-field">
-          <input id="login" type="text" name="login">
+          <input id="login" type="text" name="login" class="validate" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
           <label for="login">'; foreach($usuario_bi -> readSI($id) as $value){ echo utf8_encode($value['login']);} echo'</label>
         </div>
       </div>
@@ -308,14 +308,14 @@ $stmt ->execute();
         <div class="col s6">
           Senha:
         <div class="input-field">
-          <input id="senha" type="password" name="senha" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+          <input id="senha" type="password" name="senha" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="validate" required>
           <label for="senha">Senha</label>
         </div>
       </div>
         <div class="col s6">
           Confimar senha:
         <div class="input-field">
-          <input id="conf_senha" type="password" name="senha_con" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+          <input id="conf_senha" type="password" name="senha_con" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="validate" required>
           <label for="conf_senha">Confirmar senha</label>
         </div>
         </div>
@@ -324,7 +324,7 @@ $stmt ->execute();
         <div class="col s6">
           Email:
         <div class="input-field">
-          <input id="email" type="text" name="email">
+          <input id="email" type="text" name="email" class="validate" required>
           <label for="email">'; foreach($usuario_bi -> readSI($id) as $value){ echo utf8_encode($value['email']);} echo'</label>
         </div>
       </div>
@@ -345,14 +345,14 @@ $stmt ->execute();
         <div class="col s6">
           Nome:
           <div class="input-field">
-          <input id="nome" type="text" name="nome">
+          <input id="nome" type="text" name="nome" class="validate" required>
           <label for="nome">'; foreach($usuario_pr -> readSI($id) as $value){ echo utf8_encode($value['nome']);} echo'</label>
         </div>
         </div>
         <div class="col s6">
           Login:
         <div class="input-field">
-          <input id="login" type="text" name="login">
+          <input id="login" type="text" name="login" class="validate" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
           <label for="login">'; foreach($usuario_pr -> readSI($id) as $value){ echo utf8_encode($value['login']);} echo'</label>
         </div>
       </div>
@@ -361,14 +361,14 @@ $stmt ->execute();
         <div class="col s6">
           Senha:
         <div class="input-field">
-          <input id="senha" type="password" name="senha" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+          <input id="senha" type="password" name="senha" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="validate" required>
           <label for="senha">Senha</label>
         </div>
       </div>
         <div class="col s6">
           Confimar senha:
         <div class="input-field">
-          <input id="conf_senha" type="password" name="senha_con" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+          <input id="conf_senha" type="password" name="senha_con" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="validate" required>
           <label for="conf_senha">Confirmar senha</label>
         </div>
         </div>
@@ -377,14 +377,14 @@ $stmt ->execute();
         <div class="col s6">
           Email:
         <div class="input-field">
-          <input id="email" type="text" name="email">
+          <input id="email" type="text" name="email" class="validate" required>
           <label for="email">'; foreach($usuario_pr -> readSI($id) as $value){ echo utf8_encode($value['email']);} echo'</label>
         </div>
       </div>
       <div class="col s6">
           Turma:
         <div class="input-field">
-          <input id="turma" type="number" name="turmaid">
+          <input id="turma" type="number" name="turmaid" class="validate" required>
           <label for="turma">'; foreach ($stmt->fetchALL(PDO::FETCH_ASSOC) as $value){ echo utf8_encode($value['nometur']); } echo'</label>
         </div>
       </div>
@@ -405,14 +405,14 @@ $stmt ->execute();
         <div class="col s6">
           Nome:
           <div class="input-field">
-          <input id="nome" type="text" name="nome">
+          <input id="nome" type="text" name="nome" class="validate" required>
           <label for="nome">'; foreach($usuario_usr -> readSI($id) as $value){ echo utf8_encode($value['nome']);} echo '</label>
         </div>
         </div>
         <div class="col s6">
           Login:
         <div class="input-field">
-          <input id="login" type="text" name="login">
+          <input id="login" type="text" name="login" class="validate" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
           <label for="login">'; foreach($usuario_usr -> readSI($id) as $value){ echo utf8_encode($value['login']);} echo '</label>
         </div>
       </div>
@@ -421,14 +421,14 @@ $stmt ->execute();
         <div class="col s6">
           Senha:
         <div class="input-field">
-          <input id="senha" type="password" name="senha" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+          <input id="senha" type="password" name="senha" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="validate" required>
           <label for="senha">Senha</label>
         </div>
       </div>
         <div class="col s6">
           Confirmar senha:
         <div class="input-field">
-          <input id="conf_senha" type="password" name="senha_con" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+          <input id="conf_senha" type="password" name="senha_con" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="validate" required>
           <label for="conf_senha">Confirmar senha</label>
         </div>
         </div>
@@ -437,14 +437,14 @@ $stmt ->execute();
         <div class="col s6">
           Email:
         <div class="input-field">
-          <input id="email" type="text" name="email">
+          <input id="email" type="text" name="email" class="validate" required>
           <label for="email">'; foreach($usuario_usr -> readSI($id) as $value){ echo utf8_encode($value['email']);} echo '</label>
         </div>
         </div>
         <div class="col s6">
           Endereço:
         <div class="input-field">
-          <input id="endereco" type="text" name="endereco">
+          <input id="endereco" type="text" name="endereco" class="validate" required>
           <label for="endereco">'; foreach($usuario_usr -> readSI($id) as $value){ echo utf8_encode($value['endereco']);} echo '</label>
         </div>
       </div>
@@ -452,14 +452,14 @@ $stmt ->execute();
         <div class="col s6">
           Telefone:
         <div class="input-field">
-          <input id="telefone" type="text" name="telefone">
+          <input id="telefone" type="text" name="telefone" class="validate" required>
           <label for="telefone">'; foreach($usuario_usr -> readSI($id) as $value){ echo utf8_encode($value['telefone']);} echo '</label>
         </div>
         </div>
         <div class="col s6">
           Limite:
         <div class="input-field">
-          <input id="limite" type="number" name="limite">
+          <input id="limite" type="number" name="limite" class="validate" required>
           <label for="limite">'; foreach($usuario_usr -> readSI($id) as $value){ echo utf8_encode($value['limite']);} echo '</label>
         </div>
       </div>
@@ -480,7 +480,7 @@ $stmt ->execute();
         <div class="col s6">
           Nome:
           <div class="input-field">
-          <input id="nome" type="text">
+          <input id="nome" type="text" class="validate" required>
           <label for="nome">'; foreach($turma -> readTur($id) as $value){ echo utf8_encode($value['nometur']);} echo '</label>
         </div>
         </div>

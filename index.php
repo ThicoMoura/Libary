@@ -90,8 +90,8 @@ require_once 'funcao.php';
             <div class="row"></div>
 
             <div class="row">
-                <div class="col s7 m7 l7 xl7"></div>
-                <div class="col s2 m2 l2 xl2"><a class="btn waves-effect waves-blue modal-action modal-close red">Close</a></div>
+                <div class="col s3 m3 l5 xl7"></div>
+                <div class="col s3 m3 l3 xl2"><a class="btn waves-effect waves-blue modal-action modal-close red">Close</a></div>
                 <button class="btn waves-effect waves-blue green" type="submit">Acessar</button>
             </div>
           </form>
@@ -156,8 +156,8 @@ require_once 'funcao.php';
             <div class="row"></div>
             <div class="row"></div>
               <div class="row">
-                  <div class="col s6 m6 l6 xl6"><i class="fas fa-question-circle tooltipped" data-position="right" data-tooltip="login e senha deve conter Letras maiusculas, minusculas, acento, e numeros com no minimo oito"></i></div>
-                  <div class="col s2 m2 l2 xl2"><a class="btn waves-effect waves-blue modal-action modal-close red">Close</a></div>
+                  <div class="col s3 m3 l5 xl7"><i class="fas fa-question-circle tooltipped" data-position="right" data-tooltip="login e senha deve conter Letras maiusculas, minusculas, acento, e numeros com no minimo oito"></i></div>
+                  <div class="col s3 m3 l3 xl2"><a class="btn waves-effect waves-blue modal-action modal-close red">Close</a></div>
                   <button class="btn waves-effect waves-blue green" type="submit">Cadastrar</button>
               </div>
           </form>

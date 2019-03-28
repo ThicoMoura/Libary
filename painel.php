@@ -37,6 +37,7 @@ $teste = new locacao();
       font-size: inherit;
     }
     </style>
+    <div>teste</div>
   </head>
   <body onload="mensagem('<?php echo $_GET['mensagem'];?>', 3000)">
 
@@ -46,14 +47,11 @@ $teste = new locacao();
     <div class="nav-wrapper" id="teste1">
       <?php if ($_SESSION['user_nivel'] == "administrador" || $_SESSION['user_nivel'] == "bibliotecario"): ?>
         <a href="#" data-activates="mobile-demo" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>
-        <a href="index.php" class="brand-logo">Biblioteca Vilmar</a>
-      <?php else:?>
-        <a href="index.php" class="brand-logo">Biblioteca Vilmar</a>
       <?php endif; ?>
       <ul class="right">
-        <li><a class="right modal-trigger" href="configuracoes.php">Configurações</a></li>
-        <li><a class="right modal-trigger" href="cores.php">Cores</a></li>
-        <li><a class="right modal-trigger" href="logout.php">Sair</a></li>
+        <li><a href="index.php" class="right tooltipped" data-position='bottom' data-tooltip='Inicio'><i class="fas fa-home"></i></a></li>
+        <li><a class="right tooltipped" data-position='bottom' data-tooltip='Configurações' href="configuracoes.php"><i class="fas fa-cogs"></i></a></li>
+        <li><a class="right tooltipped" data-position='bottom' data-tooltip='Sair' href="logout.php"><i class="fas fa-sign-out-alt"></i></a></li>
       </ul>
     </div>
     <?php if ($_SESSION['user_nivel'] == "usuario" || $_SESSION['user_nivel'] == "aluno"): ?>
@@ -96,7 +94,9 @@ $teste = new locacao();
                     <li><a class="waves-effect waves-blue" href="cadastro_livro.php">Livros</a></li>
                     <li><a class="waves-effect waves-blue" href="cadastro_projetos.php">Projetos</a></li>
                     <li><a class="waves-effect waves-blue" href="cadastro_turma.php">Turma</a></li>
+                    <?php if ($_SESSION['user_nivel'] == "administrador"): ?>
                     <li><a class="waves-effect waves-blue" href="cadastro_usuarios.php">Usuarios</a></li>
+                    <?php endif; ?>
                     <li><div class="divider"></div></li>
                   </ul>
                 </div>
@@ -114,8 +114,10 @@ $teste = new locacao();
                   <li><a class="waves-effect waves-blue" href="arquivo_livro.php">Livros</a></li>
                   <li><a class="waves-effect waves-blue" href="arquivo_projetos.php">Projetos</a></li>
                   <li><a class="waves-effect waves-blue" href="arquivo_turma.php">Turma</a></li>
+                  <?php if ($_SESSION['user_nivel'] == "administrador"): ?>
                   <li><a class="waves-effect waves-blue" href="arquivo_usuarios.php">Usuarios</a></li>
                   <li><a class="waves-effect waves-blue" href="logs.php">Logs</a></li>
+                  <?php endif; ?>
                   <li><div class="divider"></div></li>
                 </ul>
               </div>
@@ -577,15 +579,14 @@ keyboard_backspace
             <td>Usuario</td>
             <td>Turma</td>
             <td>Nome</td>
-            <td>Projeto</td>
-            <td>Status do Projeto</td>
+            <td>Status do pedido</td>
             <td>Ações</td>
           </tr>
         </thead>
         <tbody>
 
         <?php 
-          $sql = "SELECT u.nome, t.nometur, p.nomeped, p.pedidoid, pr.titulo, p.statuspedido FROM usuarios u, turma t, pedido p, projetos pr WHERE u.userid = p.userid and u.turmaid = t.turmaid and p.statuspedido = 'espera' and p.projetoid = pr.projetoid ";
+          $sql = "SELECT u.nome, t.nometur, p.nomeped, p.pedidoid, p.statuspedido FROM usuarios u, turma t, pedido p WHERE u.userid = p.userid and u.turmaid = t.turmaid and p.statuspedido = 'espera' and p.nomeped <> 'Sintese do livro'";
 
           $stmt = DB::prepare($sql);
 
@@ -599,13 +600,12 @@ keyboard_backspace
             <td>".utf8_encode($value['nome'])."</td>
             <td>".utf8_encode($value['nometur'])."</td>
             <td>".utf8_encode($value['nomeped'])."</td>
-            <td>".utf8_encode($value['titulo'])."</td>
             <td>".utf8_encode($value['statuspedido'])."</td>";
 
             if ($value['nomeped'] == "Sair do projeto"){
-              echo "<td><a class='btn-floating btn-small waves-effect waves-blue green' href='aceitar_saida.php?id=".$value['pedidoid']."'><i class='material-icons'>check</i></a><a class='btn-floating btn-small red waves-effect waves-blue' href='negar_pedido.php?id=".$value['pedidoid']."''><i class='material-icons'>close</i></a></td>";
+              echo "<td><a class='btn-floating btn-small waves-effect waves-blue green tooltipped' data-position='bottom' data-tooltip='Aceitar' href='aceitar_saida.php?id=".$value['pedidoid']."'><i class='material-icons'>check</i></a><a class='btn-floating btn-small red waves-effect waves-blue tooltipped' data-position='bottom' data-tooltip='Negar' href='negar_pedido.php?id=".$value['pedidoid']."''><i class='material-icons'>close</i></a></td>";
             }else {
-              echo "<td><a class='btn-floating btn-small waves-effect waves-blue green' href='aceitar_pedido.php?id=".$value['pedidoid']."''><i class='material-icons'>check</i></a><a class='btn-floating btn-small red waves-effect waves-blue' href='negar_pedido.php?id=".$value['pedidoid']."''><i class='material-icons'>close</i></a></td>";
+              echo "<td><a class='btn-floating btn-small waves-effect waves-blue green tooltipped' data-position='bottom' data-tooltip='Aceitar' href='aceitar_pedido.php?id=".$value['pedidoid']."''><i class='material-icons'>check</i></a><a class='btn-floating btn-small red waves-effect waves-blue tooltipped' data-position='bottom' data-tooltip='Negar' href='negar_pedido.php?id=".$value['pedidoid']."''><i class='material-icons'>close</i></a></td>";
             }}?>
 
           </tr>

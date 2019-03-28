@@ -21,7 +21,7 @@ $usuario_bi = new usuario_bi();
 $usuario_pr = new usuario_pr();
 $usuario_usr = new usuario_usr();
 $turma = new turma();
-$config = config();
+$config = new config();
 
 ?>
 
