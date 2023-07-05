@@ -46,7 +46,7 @@ services:
       - 3000:3000
 
     volumes:
-      - ./backend:/home/srv/database
+      - ./backend:/home/node/libary
 
     profiles: ["dev"]
   

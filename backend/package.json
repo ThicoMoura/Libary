@@ -1,0 +1,30 @@
+{
+  "name": "libary",
+  "version": "1.0.0",
+  "description": "This is my first project with programming, initially it was done in the PHP language, where I started to learn to program, later, I took advantage of the project idea and refactored it in NodeJS, being divided into Backend and Frontend, making use of REST API technology to communication between both, in addition to other technologies and techniques.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon",
+    "prod": "pm2 start index.js --name backend",
+    "monit": "pm2 monit",
+    "stop": "pm2 stop backend",
+    "kill": "pm2 kill"
+  },
+  "keywords": [
+    "RestAPI",
+    "PostgreSQL",
+    "Express"
+  ],
+  "author": "ThicoMoura",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "consign": "^0.1.6",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "pm2": "^5.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}

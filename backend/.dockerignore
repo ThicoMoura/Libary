@@ -1,0 +1,4 @@
+assets
+*.dbml
+*.md
+node_modules

@@ -6,3 +6,6 @@ old
 
 # Exclude database data
 .pgdata
+
+# Exclude node_modules
+node_modules

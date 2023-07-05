@@ -50,7 +50,7 @@ Among the execution modes, docker compose is the simplest to execute, just execu
 
 ```bash
 # Start APIs with docker compose
-~/Libary/backend$ docker compose --profile (dev or prod) up -d (services)
+~/Libary$ docker compose --profile (dev or prod) up -d (services)
 ```
 
 ## 📊Diagram📊
