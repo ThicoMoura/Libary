@@ -1,0 +1,8 @@
+# Exclude old project
+old
+
+# Exclude env file
+.env
+
+# Exclude database data
+.pgdata

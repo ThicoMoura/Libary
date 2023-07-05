@@ -1,0 +1,96 @@
+services:
+
+  db:
+
+    container_name: postgres
+
+    image: postgres:alpine
+
+    ports:
+      - 5432:5432
+
+    environment:
+      - POSTGRES_DB=libary
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASS}
+
+    volumes:
+      - .pgdata:/var/lib/postgresql/data
+
+    profiles: ["debug", "dev", "prod"]
+
+  pgAdmin:
+
+    container_name: pgAdmin
+
+    image: dpage/pgadmin4
+
+    ports:
+      - 8081:80
+
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=${PGADMIN_EMAIL}
+      - PGADMIN_DEFAULT_PASSWORD=${PGADMIN_PASS}
+
+    profiles: ["debug"]
+
+  back-dev:
+
+    container_name: b-dev
+
+    build: 
+      context: backend
+      dockerfile: dev.Dockerfile
+    
+    ports:
+      - 3000:3000
+
+    volumes:
+      - ./backend:/home/srv/database
+
+    profiles: ["dev"]
+  
+  back-prod:
+
+    container_name: b-prod
+
+    build:
+      context: backend
+      dockerfile: prod.Dockerfile
+    
+    ports:
+      - 3000:3000
+
+    profiles: ["prod"]
+    
+    depends_on:
+      - db
+
+  front-dev:
+
+    container_name: f-dev
+
+    build: 
+      context: frontend
+      dockerfile: dev.Dockerfile
+    
+    ports:
+      - 8080:8080
+
+    profiles: ["dev"]
+
+  front-prod:
+
+    container_name: f-prod
+
+    build: 
+      context: frontend
+      dockerfile: prod.Dockerfile
+
+    ports:
+      - 80:80
+    
+    depends_on:
+      - back-prod
+
+    profiles: ["prod"]
