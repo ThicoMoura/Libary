@@ -53,5 +53,13 @@ Among the execution modes, docker compose is the simplest to execute, just execu
 ~/Libary/backend$ docker compose --profile (dev or prod) up -d (services)
 ```
 
+## 📊Diagram📊
+
+The main objective of the project is based on the leasing of books, so the current structure of the database is based on the following domain: the user finds the book he wants and carries out the leasing process, generating a record of that leasing and making the copy unavailable for other temporary locations, the employee (user), registers both a book and its number of copies, below we have a diagram that details how the database will be built, if you want more information, you can access the [diagram](https://dbdocs.io/ThicoMoura/libary) or edit it in the database.dbml file.
+
+<p align="center">
+    <img src="assets/libary.png" alt="Diagram" width="800" heigth="800">
+</p>
+
 ## 🤝Contributions🤝
 Contributions are welcome for this project. Feel free to create pull requests to fix bugs, add features, or improve code structure.
